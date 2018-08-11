@@ -21,4 +21,4 @@ func _on_scoldButton_pressed():
 	self.hide()
 
 func _on_releaseButton_pressed():
-	pass
+	sceneManager.goto_scene("res://scenes/release.tscn")
