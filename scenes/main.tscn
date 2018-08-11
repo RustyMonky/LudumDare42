@@ -43,7 +43,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="textbox" type="NinePatchRect" parent="ui" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -54,14 +53,14 @@ rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource( 4 )
 patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
-_sections_unfolded = [ "Patch Margin", "Rect" ]
+_sections_unfolded = [ "Patch Margin", "Rect", "Size Flags", "Visibility" ]
 
 [node name="label" type="Label" parent="ui/textbox" index="0"]
 
@@ -91,7 +90,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 [node name="textTimer" type="Timer" parent="ui/textbox" index="1"]
 
 process_mode = 1
-wait_time = 0.1
+wait_time = 0.05
 one_shot = false
 autostart = true
 
@@ -237,6 +236,15 @@ radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Rect", "Textures" ]
 
+[node name="transitionTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
 [connection signal="timeout" from="ui/textbox/textTimer" to="." method="_on_textTimer_timeout"]
+
+[connection signal="timeout" from="transitionTimer" to="." method="_on_transitionTimer_timeout"]
 
 
