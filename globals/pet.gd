@@ -9,6 +9,8 @@ var pet = {
 	size = 0
 }
 
+var petSprite = "res://assets/sprites/pets/baby.png"
+
 func feed():
 	pet.hunger += 1
 	pet.size += 2
