@@ -59,28 +59,39 @@ func prepare_text_queue(textArray, textIndex):
 	textLabel.set_visible_characters(0)
 
 func update_pet_sprite():
+	var spriteTexture
+
 	if pet.pet.size == 3:
-		var spriteTexture = load("res://assets/sprites/pets/phase2.png")
+		if pet.pet.happiness < 5:
+			spriteTexture = load("res://assets/sprites/pets/phase2Angry.png")
+		else:
+			spriteTexture = load("res://assets/sprites/pets/phase2.png")
 		petSprite.set_texture(spriteTexture)
 	elif pet.pet.size == 4:
-		var spriteTexture = load("res://assets/sprites/pets/phase3.png")
+		if pet.pet.happiness < 5:
+			spriteTexture = load("res://assets/sprites/pets/phase3Angry.png")
+		else:
+			spriteTexture = load("res://assets/sprites/pets/phase3.png")
 		petSprite.set_texture(spriteTexture)
 	elif pet.pet.size == 5:
-		var spriteTexture = load("res://assets/sprites/pets/phase4.png")
+		if pet.pet.happiness < 5:
+			spriteTexture = load("res://assets/sprites/pets/phase4Angry.png")
+		else:
+			spriteTexture = load("res://assets/sprites/pets/phase4.png")
 		petSprite.set_texture(spriteTexture)
 
 func update_status_bars():
 	if sizeProgress.get_value() != pet.pet.size:
 		update_pet_sprite()
-		statusTween.interpolate_property(sizeProgress, "value", sizeProgress.get_value(), pet.pet.size, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		statusTween.interpolate_property(sizeProgress, "value", sizeProgress.get_value(), pet.pet.size, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
 	if happyProgress.get_value() != pet.pet.happiness:
-		statusTween.interpolate_property(happyProgress, "value", happyProgress.get_value(), pet.pet.happiness, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		statusTween.interpolate_property(happyProgress, "value", happyProgress.get_value(), pet.pet.happiness, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
 	if hungerProgress.get_value() != pet.pet.hunger:
-		statusTween.interpolate_property(hungerProgress, "value", hungerProgress.get_value(), pet.pet.hunger, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		statusTween.interpolate_property(hungerProgress, "value", hungerProgress.get_value(), pet.pet.hunger, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
-	statusTween.interpolate_property(ageProgress, "value", ageProgress.get_value(), pet.pet.age, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	statusTween.interpolate_property(ageProgress, "value", ageProgress.get_value(), pet.pet.age, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
 	statusTween.start()
 

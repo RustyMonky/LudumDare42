@@ -4,8 +4,8 @@ var isDead = false
 
 var pet = {
 	age = 0,
-	happiness = 0,
-	hunger = 0,
+	happiness = 5,
+	hunger = 5,
 	size = 0
 }
 
@@ -22,8 +22,8 @@ func play():
 	result()
 
 func scold():
-	pet.happiness -= 2
-	pet.hunger += 1
+	pet.happiness -= 3
+	pet.hunger -= 1
 	pet.size -= 1
 	result()
 
@@ -52,14 +52,14 @@ func result():
 		isDead = true
 
 	if !isDead:
-		if pet.happiness < 0:
+		if pet.happiness < 5:
 			textQueue.append("It's angry!")
-		elif pet.happiness > 0:
+		elif pet.happiness >= 5:
 			textQueue.append("It's happy.")
 
-		if pet.hunger < 0:
+		if pet.hunger < 5:
 			textQueue.append("It's hungry!")
-		elif pet.hunger > 0:
+		elif pet.hunger >= 5:
 			textQueue.append("It's well fed.")
 
 			textQueue.append("What will you do?")
