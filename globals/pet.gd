@@ -78,6 +78,17 @@ func result():
 		elif pet.hunger >= 5:
 			textQueue.append("It's well fed.")
 
+		if pet.age == 2:
+			textQueue.append("It's still young.")
+		elif pet.age == 4:
+			textQueue.append("It's adolescent.")
+		elif pet.age == 6:
+			textQueue.append("It's an adult now!")
+		elif pet.age == 8:
+			textQueue.append("It's getting old...")
+		elif pet.age == 10:
+			textQueue.append("It's too old...")
+
 			textQueue.append("What will you do?")
 
 	gameState.currentState = gameState.RESULT
