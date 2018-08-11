@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test.png-f587c2bf208222d6c6ea622fc85022e1.stex"
+path="res://.import/ageProgress.png-d75384f52136dcf33e7da69b73c14588.stex"
 
 [deps]
 
-source_file="res://assets/sprites/pets/test.png"
-dest_files=[ "res://.import/test.png-f587c2bf208222d6c6ea622fc85022e1.stex" ]
+source_file="res://assets/sprites/ui/bars/ageProgress.png"
+dest_files=[ "res://.import/ageProgress.png-d75384f52136dcf33e7da69b73c14588.stex" ]
 
 [params]
 

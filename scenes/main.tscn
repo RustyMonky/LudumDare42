@@ -1,16 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/pets/test.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/pets/baby.png" type="Texture" id=2]
 [ext_resource path="res://scenes/actions.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sprites/ui/textbox.png" type="Texture" id=4]
 [ext_resource path="res://assets/fonts/main.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/sprites/ui/bars/sizeBar.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/ui/bars/happyBar.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/ui/bars/ageBar.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/ui/bars/hungerBar.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/ui/bars/sizeProgress.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/ui/bars/happyBar.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/ui/bars/happyProgress.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/ui/bars/ageBar.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/ui/bars/hungerBar.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/ui/bars/hungerProgress.png" type="Texture" id=12]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -43,6 +46,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="textbox" type="NinePatchRect" parent="ui" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -129,15 +133,15 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 min_value = 0.0
-max_value = 100.0
+max_value = 5.0
 step = 1.0
 page = 0.0
 value = 0.0
 exp_edit = false
 rounded = false
-texture_under = ExtResource( 6 )
-texture_over = null
-texture_progress = null
+texture_under = null
+texture_over = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
@@ -159,16 +163,16 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
+min_value = -5.0
+max_value = 5.0
 step = 1.0
 page = 0.0
 value = 0.0
 exp_edit = false
-rounded = false
-texture_under = ExtResource( 7 )
-texture_over = null
-texture_progress = null
+rounded = true
+texture_under = null
+texture_over = ExtResource( 8 )
+texture_progress = ExtResource( 9 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
@@ -197,7 +201,7 @@ page = 0.0
 value = 0.0
 exp_edit = false
 rounded = false
-texture_under = ExtResource( 8 )
+texture_under = ExtResource( 10 )
 texture_over = null
 texture_progress = null
 radial_fill_degrees = 360.0
@@ -221,20 +225,29 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-min_value = 0.0
-max_value = 100.0
+min_value = -5.0
+max_value = 5.0
 step = 1.0
 page = 0.0
 value = 0.0
 exp_edit = false
 rounded = false
-texture_under = ExtResource( 9 )
-texture_over = null
-texture_progress = null
+texture_under = null
+texture_over = ExtResource( 11 )
+texture_progress = ExtResource( 12 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="statusTween" type="Tween" parent="ui/statusGrid" index="4"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 [node name="transitionTimer" type="Timer" parent="." index="3"]
 

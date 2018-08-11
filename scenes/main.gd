@@ -1,6 +1,11 @@
 extends Node
 
 var actionsMenu
+var ageProgress
+var happyProgress
+var hungerProgress
+var sizeProgress
+var statusTween
 var textIsDone = false
 var textLabel
 var textQueue = []
@@ -10,7 +15,12 @@ var transitionTimer
 
 func _ready():
 	actionsMenu = $actionsMenu/actions
+	ageProgress = $ui/statusGrid/ageProgress
 	gameState.currentState = gameState.PROMPT
+	happyProgress = $ui/statusGrid/happyProgress
+	hungerProgress = $ui/statusGrid/hungerProgress
+	sizeProgress = $ui/statusGrid/sizeProgress
+	statusTween = $ui/statusGrid/statusTween
 	textLabel = $ui/textbox/label
 	textTimer = $ui/textbox/textTimer
 	transitionTimer = $transitionTimer
@@ -36,6 +46,7 @@ func changeState():
 
 	elif gameState.currentState == gameState.RESULT:
 		prepare_text_queue(pet.result(), 0)
+		update_status_bars()
 		gameState.currentState = gameState.PROMPT
 
 func prepare_text_queue(textArray, textIndex):
@@ -44,6 +55,20 @@ func prepare_text_queue(textArray, textIndex):
 	textQueueIndex = textIndex
 	textLabel.set_text(textArray[textIndex])
 	textLabel.set_visible_characters(0)
+
+func update_status_bars():
+	if sizeProgress.get_value() != pet.pet.size:
+		statusTween.interpolate_property(sizeProgress, "value", sizeProgress.get_value(), pet.pet.size, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+
+	if happyProgress.get_value() != pet.pet.happiness:
+		statusTween.interpolate_property(happyProgress, "value", happyProgress.get_value(), pet.pet.happiness, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+
+	if hungerProgress.get_value() != pet.pet.hunger:
+		statusTween.interpolate_property(hungerProgress, "value", hungerProgress.get_value(), pet.pet.hunger, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+
+	statusTween.interpolate_property(ageProgress, "value", ageProgress.get_value(), pet.pet.age, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+
+	statusTween.start()
 
 func _on_textTimer_timeout():
 	var visibleText = textLabel.get_visible_characters()

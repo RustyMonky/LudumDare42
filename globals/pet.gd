@@ -32,6 +32,7 @@ func release():
 
 func result():
 	var textQueue = []
+	pet.age += 1
 
 	if pet.size <= 2:
 		textQueue.append("It's a healthy size...")
