@@ -1,5 +1,7 @@
 extends Node
 
+var isDead = false
+
 var pet = {
 	age = 0,
 	happiness = 0,
@@ -31,16 +33,6 @@ func release():
 func result():
 	var textQueue = []
 
-	if pet.happiness < 0:
-		textQueue.append("It's angry!")
-	elif pet.happiness > 0:
-		textQueue.append("It's happy.")
-
-	if pet.hunger < 0:
-		textQueue.append("It's hungry!")
-	elif pet.hunger > 0:
-		textQueue.append("It's well fed.")
-
 	if pet.size <= 2:
 		textQueue.append("It's a healthy size...")
 		textQueue.append("...for now.")
@@ -56,9 +48,20 @@ func result():
 		textQueue.append("You ran out of space to fit it...")
 		textQueue.append("...and it exploded.")
 		textQueue.append("I hope you're happy...")
+		isDead = true
 
-	print(pet)
+	if !isDead:
+		if pet.happiness < 0:
+			textQueue.append("It's angry!")
+		elif pet.happiness > 0:
+			textQueue.append("It's happy.")
+
+		if pet.hunger < 0:
+			textQueue.append("It's hungry!")
+		elif pet.hunger > 0:
+			textQueue.append("It's well fed.")
+
+			textQueue.append("What will you do?")
 
 	gameState.currentState = gameState.RESULT
-	textQueue.append("What will you do?")
 	return textQueue

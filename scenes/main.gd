@@ -27,9 +27,12 @@ func _input(event):
 			prepare_text_queue(textQueue, textQueueIndex)
 
 func changeState():
-	if gameState.currentState == gameState.PROMPT:
+	if gameState.currentState == gameState.PROMPT && !pet.isDead:
 		gameState.currentState = gameState.ACTION
 		transitionTimer.start()
+
+	elif gameState.currentState == gameState.PROMPT && pet.isDead:
+		sceneManager.goto_scene("res://scenes/gameover.tscn")
 
 	elif gameState.currentState == gameState.RESULT:
 		prepare_text_queue(pet.result(), 0)

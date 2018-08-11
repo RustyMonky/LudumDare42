@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 pet="*res://globals/pet.gd"
 gameState="*res://globals/gameState.gd"
+sceneManager="*res://globals/sceneManager.gd"
 
 [display]
 
