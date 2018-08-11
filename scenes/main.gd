@@ -4,6 +4,7 @@ var actionsMenu
 var ageProgress
 var happyProgress
 var hungerProgress
+var petSprite
 var sizeProgress
 var statusTween
 var textIsDone = false
@@ -19,6 +20,7 @@ func _ready():
 	gameState.currentState = gameState.PROMPT
 	happyProgress = $ui/statusGrid/happyProgress
 	hungerProgress = $ui/statusGrid/hungerProgress
+	petSprite = $pet
 	sizeProgress = $ui/statusGrid/sizeProgress
 	statusTween = $ui/statusGrid/statusTween
 	textLabel = $ui/textbox/label
@@ -56,8 +58,20 @@ func prepare_text_queue(textArray, textIndex):
 	textLabel.set_text(textArray[textIndex])
 	textLabel.set_visible_characters(0)
 
+func update_pet_sprite():
+	if pet.pet.size == 3:
+		var spriteTexture = load("res://assets/sprites/pets/phase2.png")
+		petSprite.set_texture(spriteTexture)
+	elif pet.pet.size == 4:
+		var spriteTexture = load("res://assets/sprites/pets/phase3.png")
+		petSprite.set_texture(spriteTexture)
+	elif pet.pet.size == 5:
+		var spriteTexture = load("res://assets/sprites/pets/phase4.png")
+		petSprite.set_texture(spriteTexture)
+
 func update_status_bars():
 	if sizeProgress.get_value() != pet.pet.size:
+		update_pet_sprite()
 		statusTween.interpolate_property(sizeProgress, "value", sizeProgress.get_value(), pet.pet.size, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
 	if happyProgress.get_value() != pet.pet.happiness:
