@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sizeBar.png-2f75e5e8d962b3003829dfe86bca210b.stex"
+path="res://.import/hungerBar.png-126d7a00a61fa4ddd7c78414e2b69033.stex"
 
 [deps]
 
-source_file="res://assets/sprites/ui/sizeBar.png"
-dest_files=[ "res://.import/sizeBar.png-2f75e5e8d962b3003829dfe86bca210b.stex" ]
+source_file="res://assets/sprites/ui/bars/hungerBar.png"
+dest_files=[ "res://.import/hungerBar.png-126d7a00a61fa4ddd7c78414e2b69033.stex" ]
 
 [params]
 

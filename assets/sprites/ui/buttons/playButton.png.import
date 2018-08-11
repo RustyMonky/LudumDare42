@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/happyBar.png-eced66e450987b8af334e2205c75bc8b.stex"
+path="res://.import/playButton.png-9f5442f2569b185692f2a438bd3f2bd8.stex"
 
 [deps]
 
-source_file="res://assets/sprites/ui/happyBar.png"
-dest_files=[ "res://.import/happyBar.png-eced66e450987b8af334e2205c75bc8b.stex" ]
+source_file="res://assets/sprites/ui/buttons/playButton.png"
+dest_files=[ "res://.import/playButton.png-9f5442f2569b185692f2a438bd3f2bd8.stex" ]
 
 [params]
 

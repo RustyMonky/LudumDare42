@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hungerBar.png-3ceca2d062463700e3e6c374635aebee.stex"
+path="res://.import/ageBar.png-9d6891fb7a96996c3ebde3a5cadc9559.stex"
 
 [deps]
 
-source_file="res://assets/sprites/ui/hungerBar.png"
-dest_files=[ "res://.import/hungerBar.png-3ceca2d062463700e3e6c374635aebee.stex" ]
+source_file="res://assets/sprites/ui/bars/ageBar.png"
+dest_files=[ "res://.import/ageBar.png-9d6891fb7a96996c3ebde3a5cadc9559.stex" ]
 
 [params]
 
