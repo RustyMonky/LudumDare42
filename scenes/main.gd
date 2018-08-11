@@ -29,11 +29,21 @@ func _ready():
 
 	prepare_text_queue(["The creature is newly born.", "What do you do?"], 0)
 
+	set_process(true)
+
 	set_process_input(true)
+
+func _process(delta):
+	if gameState.currentState == gameState.RESULT && textIsDone:
+		prepare_text_queue(pet.result(), 0)
+		update_status_bars()
+		gameState.currentState = gameState.PROMPT
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		if textIsDone && gameState.currentState != gameState.ACTION:
+		if gameState.currentState == gameState.ACTION:
+			return
+		elif textIsDone:
 			changeState()
 		elif textLabel.get_visible_characters() >= textLabel.get_total_character_count() && textQueue.size() > 0:
 			prepare_text_queue(textQueue, textQueueIndex)
@@ -45,11 +55,6 @@ func changeState():
 
 	elif gameState.currentState == gameState.PROMPT && pet.isDead:
 		sceneManager.goto_scene("res://scenes/gameover.tscn")
-
-	elif gameState.currentState == gameState.RESULT:
-		prepare_text_queue(pet.result(), 0)
-		update_status_bars()
-		gameState.currentState = gameState.PROMPT
 
 func prepare_text_queue(textArray, textIndex):
 	textIsDone = false
