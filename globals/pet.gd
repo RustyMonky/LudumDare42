@@ -2,14 +2,25 @@ extends Node
 
 var isDead = false
 
-var pet = {
+var currentPet = ""
+var pet
+var petOptions = ["pink", "penguin"]
+
+var pink = {
 	age = 0,
 	happiness = 5,
 	hunger = 5,
 	size = 0
 }
 
-var petSprite = "res://assets/sprites/pets/pink/baby.png"
+var penguin = {
+	age = 0,
+	happiness = 2,
+	hunger = 5,
+	size = 0
+}
+
+var petSprite = ""
 
 func feed():
 	pet.hunger += 1
@@ -24,7 +35,10 @@ func play():
 	result()
 
 func scold():
-	pet.happiness -= 3
+	if currentPet == "penguin":
+		pet.happiness -= 5
+	else:
+		pet.happiness -= 3
 	pet.hunger -= 1
 	if pet.size -1 <= 0:
 		pet.size = 0
@@ -32,8 +46,20 @@ func scold():
 		pet.size -= 1
 	result()
 
-func release():
-	pass
+func reset_pet_values():
+	pink = {
+		age = 0,
+		happiness = 5,
+		hunger = 5,
+		size = 0
+	}
+
+	penguin = {
+		age = 0,
+		happiness = 2,
+		hunger = 5,
+		size = 0
+	}
 
 func result():
 	var textQueue = []
@@ -96,3 +122,12 @@ func result():
 	gameState.currentState = gameState.RESULT
 	print(pet)
 	return textQueue
+
+func set_pet():
+	currentPet = petOptions[randi() % petOptions.size()]
+	if currentPet == "pink":
+		pet = pink
+		petSprite = "res://assets/sprites/pets/pink/baby.png"
+	elif currentPet == "penguin":
+		pet = penguin
+		petSprite = "res://assets/sprites/pets/penguin/babyAngry.png"

@@ -59,6 +59,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_accept") && currentState == resultState.TEXT:
+		pet.reset_pet_values()
 		sceneManager.goto_scene("res://scenes/main.tscn")
 
 func determine_result_text():

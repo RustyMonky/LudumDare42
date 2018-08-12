@@ -6,4 +6,5 @@ func _ready():
 	pass
 
 func _on_retryButton_pressed():
+	pet.reset_pet_values()
 	sceneManager.goto_scene("res://scenes/main.tscn")

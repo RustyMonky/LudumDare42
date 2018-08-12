@@ -20,12 +20,15 @@ func _ready():
 	gameState.currentState = gameState.PROMPT
 	happyProgress = $ui/statusGrid/happyProgress
 	hungerProgress = $ui/statusGrid/hungerProgress
-	petSprite = $pet
 	sizeProgress = $ui/statusGrid/sizeProgress
 	statusTween = $ui/statusGrid/statusTween
 	textLabel = $ui/textbox/label
 	textTimer = $ui/textbox/textTimer
 	transitionTimer = $transitionTimer
+
+	pet.set_pet()
+	petSprite = load("res://scenes/pets/" + pet.currentPet + ".tscn").instance()
+	self.add_child(petSprite)
 
 	prepare_text_queue(["The creature is newly born.", "What do you do?"], 0)
 
@@ -62,35 +65,6 @@ func prepare_text_queue(textArray, textIndex):
 	textQueueIndex = textIndex
 	textLabel.set_text(textArray[textIndex])
 	textLabel.set_visible_characters(0)
-
-func update_pet_sprite():
-	var spriteTexture
-
-	if pet.pet.size == 3:
-		if pet.pet.happiness < 5:
-			spriteTexture = load("res://assets/sprites/pets/pink/phase2Angry.png")
-			pet.petSprite = "res://assets/sprites/pets/pink/phase2Angry.png"
-		else:
-			spriteTexture = load("res://assets/sprites/pets/pink/phase2.png")
-			pet.petSprite = "res://assets/sprites/pets/pink/phase2.png"
-		petSprite.set_texture(spriteTexture)
-
-	elif pet.pet.size == 4:
-		if pet.pet.happiness < 5:
-			spriteTexture = load("res://assets/sprites/pets/pink/phase3Angry.png")
-			pet.petSprite = "res://assets/sprites/pets/pink/phase3Angry.png"
-		else:
-			spriteTexture = load("res://assets/sprites/pets/pink/phase3.png")
-			pet.petSprite = "res://assets/sprites/pets/pink/phase3.png"
-		petSprite.set_texture(spriteTexture)
-	elif pet.pet.size == 5:
-		if pet.pet.happiness < 5:
-			spriteTexture = load("res://assets/sprites/pets/pink/phase4Angry.png")
-			pet.petSprite = "res://assets/sprites/pets/pink/phase4Angry.png"
-		else:
-			spriteTexture = load("res://assets/sprites/pets/pink/phase4.png")
-			pet.petSprite = "res://assets/sprites/pets/pink/phase4.png"
-		petSprite.set_texture(spriteTexture)
 
 func update_status_bars():
 	if sizeProgress.get_value() != pet.pet.size:
