@@ -38,8 +38,11 @@ func _ready():
 
 func _process(delta):
 	if gameState.currentState == gameState.RESULT && textIsDone:
+		if pet.isDead:
+			petSprite.explode()
 		prepare_text_queue(pet.result(), 0)
 		update_status_bars()
+		petSprite.update_pet_sprite()
 		gameState.currentState = gameState.PROMPT
 
 func _input(event):
@@ -68,7 +71,6 @@ func prepare_text_queue(textArray, textIndex):
 
 func update_status_bars():
 	if sizeProgress.get_value() != pet.pet.size:
-		update_pet_sprite()
 		statusTween.interpolate_property(sizeProgress, "value", sizeProgress.get_value(), pet.pet.size, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
 	if happyProgress.get_value() != pet.pet.happiness:
