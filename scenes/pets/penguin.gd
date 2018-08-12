@@ -30,3 +30,17 @@ func update_pet_sprite():
 			pet.petSprite = "res://assets/sprites/pets/penguin/phase4.png"
 
 	self.texture = load(spriteTexture)
+
+func _on_animation_animation_finished(anim_name):
+	self.texture = null
+
+	if pet.pet.size <= 2:
+		particles.amount = 256
+	elif pet.pet.size == 3:
+		particles.amount = 1024
+	elif pet.pet.size == 4:
+		particles.amount = 2304
+	elif pet.pet.size >= 5:
+		particles.amount = 4096
+
+	particles.set_emitting(true)
