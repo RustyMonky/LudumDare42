@@ -9,7 +9,7 @@ var pet = {
 	size = 0
 }
 
-var petSprite = "res://assets/sprites/pets/baby.png"
+var petSprite = "res://assets/sprites/pets/pink/baby.png"
 
 func feed():
 	pet.hunger += 1

@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/sprites/ui/textbox.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/results.tres" type="DynamicFont" id=4]
 
-[node name="release" type="Node"]
+[node name="release" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -173,5 +173,7 @@ playback/speed = 1.0
 [connection signal="tween_completed" from="gradeTween" to="." method="_on_gradeTween_tween_completed"]
 
 [connection signal="tween_completed" from="totalTween" to="." method="_on_totalTween_tween_completed"]
+
+[connection signal="tween_completed" from="resultCanvas/resultTween" to="." method="_on_resultTween_tween_completed"]
 
 

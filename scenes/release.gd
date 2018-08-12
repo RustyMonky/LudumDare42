@@ -1,11 +1,15 @@
 extends Node
 
+enum resultState { GRADE, TEXT }
+
+var currentState
 var gradeGrid
 var gradeSprite
 var gradeTween
 var isResultTextDone = false
 var mainFont
 var petSprite
+var petSpriteTexture
 var resultTextbox
 var resultTextLabel
 var resultTween
@@ -13,6 +17,7 @@ var score
 var totalTween
 
 func _ready():
+	currentState = resultState.GRADE
 	gradeGrid = $gradeCanvas/gradeGrid
 	gradeSprite = $gradeSprite
 	gradeTween = $gradeTween
@@ -23,8 +28,9 @@ func _ready():
 	resultTween = $resultCanvas/resultTween
 	totalTween = $totalTween
 
-	petSprite.set_texture(load(pet.petSprite))
-	var spriteSize = petSprite.get_texture().get_size()
+	petSpriteTexture = load(pet.petSprite)
+	petSprite.set_texture(petSpriteTexture)
+	var spriteSize = petSpriteTexture.get_size()
 	petSprite.position = Vector2(160 - spriteSize.x, 144 - (spriteSize.y / 2))
 
 	for key in pet.pet.keys():
@@ -48,6 +54,12 @@ func _ready():
 	gradeTween.start()
 
 	evaluate_score()
+
+	set_process_input(true)
+
+func _input(event):
+	if event.is_action_pressed("ui_accept") && currentState == resultState.TEXT:
+		sceneManager.goto_scene("res://scenes/main.tscn")
 
 func determine_result_text():
 	var result = ""
@@ -104,5 +116,8 @@ func _on_gradeTween_tween_completed(object, key):
 
 func _on_totalTween_tween_completed(object, key):
 	determine_result_text()
-	resultTween.interpolate_property(resultTextbox, "visible", false, true, 3, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	resultTween.interpolate_property(resultTextbox, "visible", false, true, 2, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	resultTween.start()
+
+func _on_resultTween_tween_completed(object, key):
+	currentState = resultState.TEXT
