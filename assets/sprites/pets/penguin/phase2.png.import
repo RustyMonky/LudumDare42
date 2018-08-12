@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/phase2.png-3f5d71f1b001972991d0bf125450aac3.stex"
+path="res://.import/phase2.png-a4b383ec17dddce8b12bf742f9fab2f3.stex"
 
 [deps]
 
-source_file="res://assets/sprites/pets/phase2.png"
-dest_files=[ "res://.import/phase2.png-3f5d71f1b001972991d0bf125450aac3.stex" ]
+source_file="res://assets/sprites/pets/penguin/phase2.png"
+dest_files=[ "res://.import/phase2.png-a4b383ec17dddce8b12bf742f9fab2f3.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

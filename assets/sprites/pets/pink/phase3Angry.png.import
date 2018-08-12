@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/phase3Angry.png-a9d60a9b26addc469241037b345e4c44.stex"
+path="res://.import/phase3Angry.png-4da7ca0fc425a55f6d4f4a3b96467a40.stex"
 
 [deps]
 
-source_file="res://assets/sprites/pets/phase3Angry.png"
-dest_files=[ "res://.import/phase3Angry.png-a9d60a9b26addc469241037b345e4c44.stex" ]
+source_file="res://assets/sprites/pets/pink/phase3Angry.png"
+dest_files=[ "res://.import/phase3Angry.png-4da7ca0fc425a55f6d4f4a3b96467a40.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baby.png-1386ca966e1071c43b0a65a826b4349a.stex"
+path="res://.import/phase2.png-de91eb302667924a21aad7de944eb70c.stex"
 
 [deps]
 
-source_file="res://assets/sprites/pets/baby.png"
-dest_files=[ "res://.import/baby.png-1386ca966e1071c43b0a65a826b4349a.stex" ]
+source_file="res://assets/sprites/pets/pink/phase2.png"
+dest_files=[ "res://.import/phase2.png-de91eb302667924a21aad7de944eb70c.stex" ]
 
 [params]
 

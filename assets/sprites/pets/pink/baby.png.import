@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/babyAngry.png-324ae8fee4bc4a10612d00fc04b42bec.stex"
+path="res://.import/baby.png-e0371411fbff4b2c8737bf895d2360bb.stex"
 
 [deps]
 
-source_file="res://assets/sprites/pets/babyAngry.png"
-dest_files=[ "res://.import/babyAngry.png-324ae8fee4bc4a10612d00fc04b42bec.stex" ]
+source_file="res://assets/sprites/pets/pink/baby.png"
+dest_files=[ "res://.import/baby.png-e0371411fbff4b2c8737bf895d2360bb.stex" ]
 
 [params]
 
