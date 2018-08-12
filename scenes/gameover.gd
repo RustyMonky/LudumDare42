@@ -7,4 +7,5 @@ func _ready():
 
 func _on_retryButton_pressed():
 	pet.reset_pet_values()
+	pet.isDead = false
 	sceneManager.goto_scene("res://scenes/main.tscn")

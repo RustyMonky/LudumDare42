@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/animations/explode.tres" type="Animation" id=3]
 [ext_resource path="res://assets/sprites/pets/pink/particles/pink.tres" type="Material" id=4]
 
-[node name="pet" type="Sprite" index="0"]
+[node name="pet" type="Sprite"]
 
 position = Vector2( 80, 56 )
 texture = ExtResource( 1 )

@@ -1,33 +1,40 @@
 extends "res://scenes/pet.gd"
 
 func _ready():
-	spriteTexture = "res://assets/sprites/pets/penguin/baby.png"
+	spriteTexture = "res://assets/sprites/pets/penguin/babyAngry.png"
 	self.texture = load(spriteTexture)
 
 func update_pet_sprite():
-	if pet.pet.size == 3:
+	if pet.pet.size <= 2:
+		if pet.pet.happiness < 5:
+			spriteTexture = "res://assets/sprites/pets/penguin/babyAngry.png"
+			pet.petSprite = spriteTexture
+		else:
+			spriteTexture = "res://assets/sprites/pets/penguin/baby.png"
+			pet.petSprite = spriteTexture
+	elif pet.pet.size == 3:
 		if pet.pet.happiness < 5:
 			spriteTexture = "res://assets/sprites/pets/penguin/phase2Angry.png"
-			pet.petSprite = "res://assets/sprites/pets/penguin/phase2Angry.png"
+			pet.petSprite = spriteTexture
 		else:
 			spriteTexture = "res://assets/sprites/pets/penguin/phase2.png"
-			pet.petSprite = "res://assets/sprites/pets/penguin/phase2.png"
+			pet.petSprite = spriteTexture
 
 	elif pet.pet.size == 4:
 		if pet.pet.happiness < 5:
 			spriteTexture = "res://assets/sprites/pets/penguin/phase3Angry.png"
-			pet.petSprite = "res://assets/sprites/pets/penguin/phase3Angry.png"
+			pet.petSprite = spriteTexture
 		else:
 			spriteTexture = "res://assets/sprites/pets/penguin/phase3.png"
-			pet.petSprite = "res://assets/sprites/pets/penguin/phase3.png"
+			pet.petSprite = spriteTexture
 
 	elif pet.pet.size == 5:
 		if pet.pet.happiness < 5:
 			spriteTexture = "res://assets/sprites/pets/penguin/phase4Angry.png"
-			pet.petSprite = "res://assets/sprites/pets/penguin/phase4Angry.png"
+			pet.petSprite = spriteTexture
 		else:
 			spriteTexture = "res://assets/sprites/pets/penguin/phase4.png"
-			pet.petSprite = "res://assets/sprites/pets/penguin/phase4.png"
+			pet.petSprite = spriteTexture
 
 	self.texture = load(spriteTexture)
 

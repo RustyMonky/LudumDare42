@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baby.png-b6b156b822cfaa34e75f8c6a47db3c0a.stex"
+path="res://.import/phase4Angry.png-b320869207a1c192411eab34ea8dc7c5.stex"
 
 [deps]
 
-source_file="res://assets/sprites/pets/pink/particles/baby.png"
-dest_files=[ "res://.import/baby.png-b6b156b822cfaa34e75f8c6a47db3c0a.stex" ]
+source_file="res://assets/sprites/pets/penguin/phase4Angry.png"
+dest_files=[ "res://.import/phase4Angry.png-b320869207a1c192411eab34ea8dc7c5.stex" ]
 
 [params]
 
