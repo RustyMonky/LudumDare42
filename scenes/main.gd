@@ -32,6 +32,7 @@ func _ready():
 	textTimer = $ui/textbox/textTimer
 	transitionTimer = $transitionTimer
 
+	randomize()
 	pet.set_pet()
 	petSprite = load("res://scenes/pets/" + pet.currentPet + ".tscn").instance()
 	background.add_child(petSprite)

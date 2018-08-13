@@ -80,7 +80,7 @@ func determine_result_text():
 	elif pet.pet.size == 3:
 		result += "Its size was impressive, but not extraordinary.\n"
 	elif pet.pet.size == 4:
-		result += "It was overweight, thanks to you.\n"
+		result += "It was overweight. Oh well!\n"
 	elif pet.pet.size == 5:
 		result += "It had to go -- you had no room left for it!\n"
 
@@ -90,13 +90,13 @@ func determine_result_text():
 		result += "It seemed happy, thanks to you.\n"
 
 	if score <= 3:
-		result += "Yet you could've done better..."
+		result += "Not your best work..."
 	elif score <= 6:
 		result += "You did the best you could."
 	elif score <= 8:
 		result += "You nurtured it well."
 	elif score <= 10:
-		result += "Clearly, you know your pocket monsters."
+		result += "Clearly, you know your pocket pets."
 
 	resultTextLabel.set_text(result)
 

@@ -4,7 +4,14 @@ var isDead = false
 
 var currentPet = ""
 var pet
-var petOptions = ["pink", "penguin"]
+var petOptions = ["pink", "penguin", "frog"]
+
+var frog = {
+	age = 0,
+	happiness = 5,
+	hunger = 3,
+	size = 0
+}
 
 var pink = {
 	age = 0,
@@ -24,7 +31,10 @@ var petSprite = ""
 
 func feed():
 	pet.hunger += 2
-	pet.size += 2
+	if currentPet == "frog":
+		pet.size += 3
+	else:
+		pet.size += 2
 	pet.happiness += 1
 	result()
 
@@ -86,9 +96,12 @@ func result():
 
 	if !isDead:
 		if pet.size <= 2:
-			textQueue.append("It's still small...for now.")
+			textQueue.append("It's small...for now.")
+		elif currentPet == "frog":
+			textQueue.append("It grows too fast!")
+			textQueue.append("Quick, slim it down!")
 		elif pet.size == 3:
-			textQueue.append("It's growing large...")
+			textQueue.append("It's fairly large...")
 		elif pet.size == 4:
 			textQueue.append("It barely fits in here!")
 		elif pet.size == 5:
@@ -129,3 +142,6 @@ func set_pet():
 	elif currentPet == "penguin":
 		pet = penguin
 		petSprite = "res://assets/sprites/pets/penguin/babyAngry.png"
+	elif currentPet == "frog":
+		pet = frog
+		petSprite = "res://assets/sprites/pets/penguin/babyFrog.png"

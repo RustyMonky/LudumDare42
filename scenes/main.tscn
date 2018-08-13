@@ -18,7 +18,7 @@
 [ext_resource path="res://assets/sprites/ui/bars/hungerProgress.png" type="Texture" id=16]
 [ext_resource path="res://assets/sounds/music/game.wav" type="AudioStream" id=17]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 script = ExtResource( 1 )
 
