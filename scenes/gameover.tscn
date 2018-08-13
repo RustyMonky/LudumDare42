@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/sprites/ui/buttons/retryButton.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/ui/buttons/retryButtonHover.png" type="Texture" id=4]
 
-[node name="gameover" type="Node" index="0"]
+[node name="gameover" type="Node"]
 
 script = ExtResource( 1 )
 

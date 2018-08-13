@@ -4,6 +4,7 @@ var actionsMenu
 var ageProgress
 var happyProgress
 var hungerProgress
+var nextButton
 var petSprite
 var sizeProgress
 var statusTween
@@ -20,6 +21,7 @@ func _ready():
 	gameState.currentState = gameState.PROMPT
 	happyProgress = $ui/statusGrid/happyProgress
 	hungerProgress = $ui/statusGrid/hungerProgress
+	nextButton = $ui/textbox/nextButton
 	sizeProgress = $ui/statusGrid/sizeProgress
 	statusTween = $ui/statusGrid/statusTween
 	textLabel = $ui/textbox/label
@@ -51,8 +53,6 @@ func _input(event):
 			return
 		elif textIsDone:
 			changeState()
-		elif textLabel.get_visible_characters() >= textLabel.get_total_character_count() && textQueue.size() > 0 && !textTimer.is_stopped():
-			prepare_text_queue(textQueue, textQueueIndex)
 
 func changeState():
 	if gameState.currentState == gameState.PROMPT && !pet.isDead:
@@ -88,6 +88,7 @@ func _on_textTimer_timeout():
 	textLabel.set_visible_characters(visibleText + 1)
 
 	if visibleText == textLabel.get_total_character_count():
+		nextButton.show()
 		if textQueueIndex < (textQueue.size() - 1):
 			textQueueIndex += 1
 		else:
@@ -95,3 +96,8 @@ func _on_textTimer_timeout():
 
 func _on_transitionTimer_timeout():
 	actionsMenu.show()
+
+func _on_nextButton_pressed():
+	if !textIsDone:
+		prepare_text_queue(textQueue, textQueueIndex)
+	nextButton.hide()

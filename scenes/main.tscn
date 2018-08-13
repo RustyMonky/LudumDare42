@@ -1,20 +1,22 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ui/background.png" type="Texture" id=2]
 [ext_resource path="res://scenes/actions.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sprites/ui/textbox.png" type="Texture" id=4]
 [ext_resource path="res://assets/fonts/main.tres" type="DynamicFont" id=5]
-[ext_resource path="res://assets/sprites/ui/bars/sizeBar.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/ui/bars/sizeProgress.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/ui/bars/happyBar.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/ui/bars/happyProgress.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/ui/bars/ageBar.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/ui/bars/ageProgress.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/ui/bars/hungerBar.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/ui/bars/hungerProgress.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/ui/buttons/nextButton.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/ui/buttons/nextButtonHover.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/ui/bars/sizeBar.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/ui/bars/sizeProgress.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/ui/bars/happyBar.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/ui/bars/happyProgress.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/ui/bars/ageBar.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/ui/bars/ageProgress.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/ui/bars/hungerBar.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/ui/bars/hungerProgress.png" type="Texture" id=15]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -124,6 +126,32 @@ wait_time = 0.05
 one_shot = false
 autostart = true
 
+[node name="nextButton" type="TextureButton" parent="ui/textbox" index="2"]
+
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -17.0
+margin_top = -9.0
+margin_right = -1.0
+margin_bottom = -1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
+
 [node name="statusGrid" type="GridContainer" parent="ui" index="1"]
 
 anchor_left = 0.0
@@ -166,8 +194,8 @@ value = 0.0
 exp_edit = false
 rounded = true
 texture_under = null
-texture_over = ExtResource( 6 )
-texture_progress = ExtResource( 7 )
+texture_over = ExtResource( 8 )
+texture_progress = ExtResource( 9 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
@@ -197,8 +225,8 @@ value = 5.0
 exp_edit = false
 rounded = true
 texture_under = null
-texture_over = ExtResource( 8 )
-texture_progress = ExtResource( 9 )
+texture_over = ExtResource( 10 )
+texture_progress = ExtResource( 11 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
@@ -228,8 +256,8 @@ value = 0.0
 exp_edit = false
 rounded = true
 texture_under = null
-texture_over = ExtResource( 10 )
-texture_progress = ExtResource( 11 )
+texture_over = ExtResource( 12 )
+texture_progress = ExtResource( 13 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
@@ -259,8 +287,8 @@ value = 5.0
 exp_edit = false
 rounded = true
 texture_under = null
-texture_over = ExtResource( 12 )
-texture_progress = ExtResource( 13 )
+texture_over = ExtResource( 14 )
+texture_progress = ExtResource( 15 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
@@ -284,6 +312,8 @@ one_shot = true
 autostart = false
 
 [connection signal="timeout" from="ui/textbox/textTimer" to="." method="_on_textTimer_timeout"]
+
+[connection signal="pressed" from="ui/textbox/nextButton" to="." method="_on_nextButton_pressed"]
 
 [connection signal="timeout" from="transitionTimer" to="." method="_on_transitionTimer_timeout"]
 
