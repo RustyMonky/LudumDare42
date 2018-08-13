@@ -51,7 +51,7 @@ func _input(event):
 			return
 		elif textIsDone:
 			changeState()
-		elif textLabel.get_visible_characters() >= textLabel.get_total_character_count() && textQueue.size() > 0:
+		elif textLabel.get_visible_characters() >= textLabel.get_total_character_count() && textQueue.size() > 0 && !textTimer.is_stopped():
 			prepare_text_queue(textQueue, textQueueIndex)
 
 func changeState():

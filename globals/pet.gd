@@ -23,7 +23,7 @@ var penguin = {
 var petSprite = ""
 
 func feed():
-	pet.hunger += 1
+	pet.hunger += 2
 	pet.size += 2
 	pet.happiness += 1
 	result()
@@ -39,7 +39,7 @@ func diet():
 		pet.happiness -= 5
 	else:
 		pet.happiness -= 3
-	pet.hunger -= 1
+	pet.hunger -= 2
 	if pet.size -1 <= 0:
 		pet.size = 0
 	else:
@@ -92,7 +92,7 @@ func result():
 		elif pet.size == 4:
 			textQueue.append("It barely fits in here!")
 		elif pet.size == 5:
-			textQueue.append("It's running out of space to fit in!")
+			textQueue.append("It's running out of space!")
 			textQueue.append("Quick, slim it down!")
 
 		if pet.happiness < 5:
