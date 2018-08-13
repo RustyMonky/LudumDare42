@@ -16,8 +16,8 @@ func _on_playButton_pressed():
 	pet.play()
 	self.hide()
 
-func _on_scoldButton_pressed():
-	pet.scold()
+func _on_dietButton_pressed():
+	pet.diet()
 	self.hide()
 
 func _on_releaseButton_pressed():

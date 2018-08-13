@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scoldButton.png-f6fc665f3e2fddb2ea4cc8b68919a382.stex"
+path="res://.import/dietButton.png-39fb2cf84bc7d2cbba7e103c5015713e.stex"
 
 [deps]
 
-source_file="res://assets/sprites/ui/buttons/scoldButton.png"
-dest_files=[ "res://.import/scoldButton.png-f6fc665f3e2fddb2ea4cc8b68919a382.stex" ]
+source_file="res://assets/sprites/ui/buttons/dietButton.png"
+dest_files=[ "res://.import/dietButton.png-39fb2cf84bc7d2cbba7e103c5015713e.stex" ]
 
 [params]
 

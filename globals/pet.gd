@@ -34,7 +34,7 @@ func play():
 	pet.size += 1
 	result()
 
-func scold():
+func diet():
 	if currentPet == "penguin":
 		pet.happiness -= 5
 	else:

@@ -46,12 +46,11 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+color = Color( 0.392157, 0.4, 0.498039, 1 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="actionsMenu" type="CanvasLayer" parent="." index="1"]
 
-editor/display_folded = true
 layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
