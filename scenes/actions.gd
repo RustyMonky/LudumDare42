@@ -1,6 +1,9 @@
 extends Control
 
-func ready():
+var click
+
+func _ready():
+	click = $click
 	set_process_input(true)
 
 func _input(event):
@@ -9,14 +12,17 @@ func _input(event):
 		pass
 
 func _on_feedButton_pressed():
+	click.play()
 	pet.feed()
 	self.hide()
 
 func _on_playButton_pressed():
+	click.play()
 	pet.play()
 	self.hide()
 
 func _on_dietButton_pressed():
+	click.play()
 	pet.diet()
 	self.hide()
 

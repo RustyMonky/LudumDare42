@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/actions.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ui/buttons/feedButton.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/sprites/ui/buttons/dietButtonHover.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/ui/buttons/releaseButton.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/ui/buttons/releaseButtonHover.png" type="Texture" id=9]
+[ext_resource path="res://assets/sounds/effects/click.wav" type="AudioStream" id=10]
 
 [node name="actions" type="Control"]
 
@@ -159,6 +160,15 @@ texture_normal = ExtResource( 8 )
 texture_hover = ExtResource( 9 )
 stretch_mode = 5
 _sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="click" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 10 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="pressed" from="vbox/feedButton" to="." method="_on_feedButton_pressed"]
 

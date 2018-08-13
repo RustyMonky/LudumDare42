@@ -2,6 +2,7 @@ extends Node
 
 var actionsMenu
 var ageProgress
+var click
 var happyProgress
 var hungerProgress
 var nextButton
@@ -18,6 +19,7 @@ var transitionTimer
 func _ready():
 	actionsMenu = $actionsMenu/actions
 	ageProgress = $ui/statusGrid/ageProgress
+	click = $ui/textbox/nextButton/click
 	gameState.currentState = gameState.PROMPT
 	happyProgress = $ui/statusGrid/happyProgress
 	hungerProgress = $ui/statusGrid/hungerProgress
@@ -98,6 +100,7 @@ func _on_transitionTimer_timeout():
 	actionsMenu.show()
 
 func _on_nextButton_pressed():
+	click.play()
 	if !textIsDone:
 		prepare_text_queue(textQueue, textQueueIndex)
 	nextButton.hide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ui/background.png" type="Texture" id=2]
@@ -7,15 +7,16 @@
 [ext_resource path="res://assets/fonts/main.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/sprites/ui/buttons/nextButton.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/ui/buttons/nextButtonHover.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/ui/bars/sizeBar.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/ui/bars/sizeProgress.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/ui/bars/happyBar.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/ui/bars/happyProgress.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/ui/bars/ageBar.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/ui/bars/ageProgress.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/ui/bars/hungerBar.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/ui/bars/hungerProgress.png" type="Texture" id=15]
-[ext_resource path="res://assets/sounds/music/game.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/effects/click.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sprites/ui/bars/sizeBar.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/ui/bars/sizeProgress.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/ui/bars/happyBar.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/ui/bars/happyProgress.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/ui/bars/ageBar.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/ui/bars/ageProgress.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/ui/bars/hungerBar.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/ui/bars/hungerProgress.png" type="Texture" id=16]
+[ext_resource path="res://assets/sounds/music/game.wav" type="AudioStream" id=17]
 
 [node name="root" type="Node"]
 
@@ -69,7 +70,6 @@ _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="ui" type="CanvasLayer" parent="." index="2"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -156,6 +156,15 @@ texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 
+[node name="click" type="AudioStreamPlayer" parent="ui/textbox/nextButton" index="0"]
+
+stream = ExtResource( 8 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [node name="statusGrid" type="GridContainer" parent="ui" index="1"]
 
 anchor_left = 0.0
@@ -198,8 +207,8 @@ value = 0.0
 exp_edit = false
 rounded = true
 texture_under = null
-texture_over = ExtResource( 8 )
-texture_progress = ExtResource( 9 )
+texture_over = ExtResource( 9 )
+texture_progress = ExtResource( 10 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
@@ -229,8 +238,8 @@ value = 5.0
 exp_edit = false
 rounded = true
 texture_under = null
-texture_over = ExtResource( 10 )
-texture_progress = ExtResource( 11 )
+texture_over = ExtResource( 11 )
+texture_progress = ExtResource( 12 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
@@ -260,8 +269,8 @@ value = 0.0
 exp_edit = false
 rounded = true
 texture_under = null
-texture_over = ExtResource( 12 )
-texture_progress = ExtResource( 13 )
+texture_over = ExtResource( 13 )
+texture_progress = ExtResource( 14 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
@@ -291,8 +300,8 @@ value = 5.0
 exp_edit = false
 rounded = true
 texture_under = null
-texture_over = ExtResource( 14 )
-texture_progress = ExtResource( 15 )
+texture_over = ExtResource( 15 )
+texture_progress = ExtResource( 16 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
@@ -317,7 +326,7 @@ autostart = false
 
 [node name="music" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = ExtResource( 16 )
+stream = ExtResource( 17 )
 volume_db = -15.0
 pitch_scale = 1.0
 autoplay = true
