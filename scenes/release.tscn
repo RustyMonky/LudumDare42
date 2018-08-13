@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/sprites/ui/textbox.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/results.tres" type="DynamicFont" id=4]
 
-[node name="release" type="Node"]
+[node name="release" type="Node" index="0"]
 
 script = ExtResource( 1 )
 

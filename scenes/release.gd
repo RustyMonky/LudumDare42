@@ -112,7 +112,7 @@ func evaluate_score():
 		gradeSprite.set_texture(load("res://assets/sprites/grades/s.png"))
 
 func _on_gradeTween_tween_completed(object, key):
-	totalTween.interpolate_property(gradeSprite, "position", gradeSprite.position, Vector2(32, 124), 1.5, Tween.TRANS_BACK, Tween.EASE_IN)
+	totalTween.interpolate_property(gradeSprite, "position", gradeSprite.position, Vector2(32, 124), 1.5, Tween.TRANS_BOUNCE, Tween.EASE_IN)
 	totalTween.start()
 
 func _on_totalTween_tween_completed(object, key):
