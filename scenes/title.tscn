@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/sounds/effects/click.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sounds/music/title.wav" type="AudioStream" id=6]
 
-[node name="title" type="Node"]
+[node name="title" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
