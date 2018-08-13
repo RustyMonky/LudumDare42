@@ -4,5 +4,5 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_select"):
 		sceneManager.goto_scene("res://scenes/main.tscn")

@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/sprites/ui/textbox.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/results.tres" type="DynamicFont" id=3]
 
-[node name="info" type="Node"]
+[node name="info" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -46,26 +46,34 @@ custom_fonts/bold_font = ExtResource( 3 )
 custom_fonts/normal_font = ExtResource( 3 )
 custom_colors/default_color = Color( 0.392157, 0.4, 0.498039, 1 )
 bbcode_enabled = true
-bbcode_text = "[color=#ff6f1d]Feed[/color] your pet to curb its hunger.
+bbcode_text = "You raise little monsters in your pockets!
+
+[color=#ff6f1d]Feed[/color] your pet to curb its hunger.
 [color=#dfff22]Play[/color] to keep them happy.
 If they get too big, put them on a [color=#757cff]diet[/color].
 Then [color=#52e87c]release[/color] them into the wild and get evaluated!
 
 Different pets react differently to each action.
 
-Left-click is all you need. Click to start!"
+Left-click on buttons to interact with the game.
+
+Press [b]Space[/b] to get started!"
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Feed your pet to curb its hunger.
+text = "You raise little monsters in your pockets!
+
+Feed your pet to curb its hunger.
 Play to keep them happy.
 If they get too big, put them on a diet.
 Then release them into the wild and get evaluated!
 
 Different pets react differently to each action.
 
-Left-click is all you need. Click to start!"
+Left-click on buttons to interact with the game.
+
+Press Space to get started!"
 scroll_active = true
 scroll_following = false
 selection_enabled = false

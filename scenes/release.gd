@@ -96,7 +96,7 @@ func determine_result_text():
 	elif score <= 8:
 		result += "You nurtured it well."
 	elif score <= 10:
-		result += "Clearly, you know what you're doing."
+		result += "Clearly, you know your pocket monsters."
 
 	resultTextLabel.set_text(result)
 

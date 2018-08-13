@@ -80,8 +80,8 @@ func result():
 
 	if pet.age > 10:
 			textQueue.append("It got too old...")
-			textQueue.append("...so it died.")
-			textQueue.append("Really couldn't part with it, eh?")
+			textQueue.append("...so it died. In your pocket.")
+			textQueue.append("...That's gross. Ew.")
 			isDead = true
 
 	if !isDead:

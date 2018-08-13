@@ -16,7 +16,7 @@
 [ext_resource path="res://assets/sprites/ui/bars/hungerBar.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprites/ui/bars/hungerProgress.png" type="Texture" id=15]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 script = ExtResource( 1 )
 
