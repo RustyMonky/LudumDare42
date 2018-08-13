@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/info.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ui/textbox.png" type="Texture" id=2]
-[ext_resource path="res://assets/fonts/results.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/themes/info.tres" type="Theme" id=3]
+[ext_resource path="res://assets/fonts/results.tres" type="DynamicFont" id=4]
 
-[node name="info" type="Node"]
+[node name="info" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -42,8 +43,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/bold_font = ExtResource( 3 )
-custom_fonts/normal_font = ExtResource( 3 )
+theme = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0.392157, 0.4, 0.498039, 1 )
 bbcode_enabled = true
 bbcode_text = "You raise little monsters in your pockets!
@@ -78,6 +80,6 @@ scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "Margin", "Material", "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "BBCode", "Margin", "Material", "Rect", "Theme", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
 
 
