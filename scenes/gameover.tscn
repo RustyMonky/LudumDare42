@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/gameover.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/main.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/sprites/ui/buttons/retryButton.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/ui/buttons/retryButtonHover.png" type="Texture" id=4]
 
-[node name="gameover" type="Node"]
+[node name="gameover" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -69,6 +70,7 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [connection signal="pressed" from="retryButton" to="." method="_on_retryButton_pressed"]

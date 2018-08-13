@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/actions.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ui/buttons/feedButton.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/ui/buttons/playButton.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/ui/buttons/dietButton.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/ui/buttons/releaseButton.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/ui/buttons/feedButtonHover.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/ui/buttons/playButton.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/ui/buttons/playButtonHover.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/ui/buttons/dietButton.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/ui/buttons/dietButtonHover.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/ui/buttons/releaseButton.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/ui/buttons/releaseButtonHover.png" type="Texture" id=9]
 
 [node name="actions" type="Control"]
 
@@ -74,6 +78,7 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
 stretch_mode = 5
 _sections_unfolded = [ "Rect", "Textures" ]
 
@@ -98,7 +103,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
 stretch_mode = 5
 _sections_unfolded = [ "Rect", "Textures" ]
 
@@ -123,7 +129,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 stretch_mode = 5
 _sections_unfolded = [ "Rect", "Textures" ]
 
@@ -148,7 +155,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
 stretch_mode = 5
 _sections_unfolded = [ "Rect", "Textures" ]
 

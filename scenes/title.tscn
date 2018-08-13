@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://title.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ui/buttons/startButton.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/ui/buttons/startButtonHover.png" type="Texture" id=3]
 
 [node name="title" type="Node"]
 
@@ -29,6 +30,7 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
 _sections_unfolded = [ "Textures" ]
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
