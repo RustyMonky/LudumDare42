@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/sprites/ui/buttons/dietButton.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/ui/buttons/releaseButton.png" type="Texture" id=5]
 
-[node name="actions" type="Control" index="0"]
+[node name="actions" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0

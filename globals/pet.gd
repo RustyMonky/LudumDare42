@@ -86,7 +86,7 @@ func result():
 
 	if !isDead:
 		if pet.size <= 2:
-			textQueue.append("It's still small...for now")
+			textQueue.append("It's still small...for now.")
 		elif pet.size == 3:
 			textQueue.append("It's growing large...")
 		elif pet.size == 4:

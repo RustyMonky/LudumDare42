@@ -65,38 +65,38 @@ func _input(event):
 func determine_result_text():
 	var result = ""
 	if pet.pet.age <= 2:
-		result += "You released it during its youth.\n"
+		result += "It was barely a child when you let it go.\n"
 	elif pet.pet.age <= 4:
-		result += "You released it, fully grown.\n"
+		result += "It left you as an adolscent, still growing.\n"
 	elif pet.pet.age <= 6:
-		result += "You released it past its prime.\n"
+		result += "You released it, fully grown.\n"
 	elif pet.pet.age <= 8:
-		result += "You released it during its waning years.\n"
+		result += "It left you, past its prime.\n"
 	elif pet.pet.age <= 10:
-		result += "You released it out into the world, though it won't last much longer.\n"
+		result += "You let it go, but it doesn't have long.\n"
 
 	if pet.pet.size <= 2 :
-		result += "With its small stature, it won't stand out.\n"
+		result += "It was so small...\n"
 	elif pet.pet.size == 3:
-		result += "It was rather large, and can probably handle itself.\n"
+		result += "Its size was impressive, but not extraordinary.\n"
 	elif pet.pet.size == 4:
-		result += "It was overweight, but you let it go anyway.\n"
+		result += "It was overweight, thanks to you.\n"
 	elif pet.pet.size == 5:
-		result += "You pratically rolled it out. It was massive!\n"
+		result += "It had to go -- you had no room left for it!\n"
 
 	if pet.pet.happiness < 5:
-		result += "It was still angry when it left...and could be dangerous.\n"
+		result += "It was still angry when it left...\n"
 	else:
-		result += "You cared for it well, and it was sad to leave you.\n"
+		result += "It seemed happy, thanks to you.\n"
 
 	if score <= 3:
-		result += "You could probably have cared for it better..."
+		result += "Yet you could've done better..."
 	elif score <= 6:
-		result += "You did the best you could for it."
+		result += "You did the best you could."
 	elif score <= 8:
-		result += "You nurtured it well. Good job!"
+		result += "You nurtured it well."
 	elif score <= 10:
-		result += "You couldn't have done a better job!"
+		result += "Clearly, you know what you're doing."
 
 	resultTextLabel.set_text(result)
 
