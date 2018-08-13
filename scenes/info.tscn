@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/themes/info.tres" type="Theme" id=3]
 [ext_resource path="res://assets/fonts/results.tres" type="DynamicFont" id=4]
 
-[node name="info" type="Node"]
+[node name="info" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
