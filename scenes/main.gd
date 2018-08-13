@@ -2,6 +2,7 @@ extends Node
 
 var actionsMenu
 var ageProgress
+var background
 var click
 var happyProgress
 var hungerProgress
@@ -19,6 +20,7 @@ var transitionTimer
 func _ready():
 	actionsMenu = $actionsMenu/actions
 	ageProgress = $ui/statusGrid/ageProgress
+	background = $background
 	click = $ui/textbox/nextButton/click
 	gameState.currentState = gameState.PROMPT
 	happyProgress = $ui/statusGrid/happyProgress
@@ -32,7 +34,7 @@ func _ready():
 
 	pet.set_pet()
 	petSprite = load("res://scenes/pets/" + pet.currentPet + ".tscn").instance()
-	self.add_child(petSprite)
+	background.add_child(petSprite)
 
 	prepare_text_queue(["The creature is newly born.", "What do you do?"], 0)
 
