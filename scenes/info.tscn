@@ -51,13 +51,20 @@ bbcode_enabled = true
 bbcode_text = "You raise little monsters in your pockets!
 
 [color=#ff6f1d]Feed[/color] your pet to curb its hunger.
+
 [color=#dfff22]Play[/color] to keep them happy.
+
 If they get too big, put them on a [color=#757cff]diet[/color].
+
 Then [color=#52e87c]release[/color] them into the wild and get evaluated!
 
 Different pets react differently to each action.
 
 Left-click on buttons to interact with the game.
+
+To cycle through text, click the next arrow button on the bottom-right.
+
+And, when in doubt, just click the screen.
 
 Press [b]Space[/b] to get started!"
 visible_characters = -1
@@ -67,13 +74,20 @@ tab_size = 4
 text = "You raise little monsters in your pockets!
 
 Feed your pet to curb its hunger.
+
 Play to keep them happy.
+
 If they get too big, put them on a diet.
+
 Then release them into the wild and get evaluated!
 
 Different pets react differently to each action.
 
 Left-click on buttons to interact with the game.
+
+To cycle through text, click the next arrow button on the bottom-right.
+
+And, when in doubt, just click the screen.
 
 Press Space to get started!"
 scroll_active = true

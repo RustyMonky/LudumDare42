@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/animations/explode.tres" type="Animation" id=3]
 [ext_resource path="res://assets/sprites/pets/frog/particles/frog.tres" type="Material" id=4]
 
-[node name="pet" type="Sprite"]
+[node name="pet" type="Sprite" index="0"]
 
 position = Vector2( 80, 56 )
 texture = ExtResource( 1 )
@@ -42,6 +42,8 @@ texture = null
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Time" ]
+_sections_unfolded = [ "Drawing", "Process Material", "Time" ]
+
+[connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
 
 
